@@ -5,29 +5,11 @@
     <title>Tesla Theater</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <style>
-         .topnav {
-            overflow: hidden;
-            background-color: var(--navbar-color);
-            padding: 12px;
-        }
-
-        .topnav .menu-container {
-            float: right;
-        }
-
-        .topnav .menu-container button {
-            float: right;
-            padding: 6px 10px;
-            margin-top: 8px;
-            margin-right: 16px;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
 
         body {
             background-color: var(--background-color);
             margin: 0;
+            font: normal 14px Verdana, Arial, sans-serif;
         }
 
         .container {
@@ -43,9 +25,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: var(--text-color);
             text-decoration: none;
-            padding: 16px;
             border-radius: 8px;
             transition: all 0.2s ease-in-out;
             cursor: pointer;
@@ -61,15 +41,27 @@
             width: 200px;
             height: auto;
             aspect-ratio: 3 / 2;
+            margin: 16px;
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
         }
 
+        .action {
+            color: var(--button-text-color);
+            background-color: var(--button-background-color);
+            width: fit-content;
+            padding-left: 32px;
+            padding-right: 32px;
+            height: 48px;
+            margin: 50px auto;
+            text-decoration: none;
+        }
+
         :root {
             --background-color: #f4f4f4;
-            --navbar-color: #f4f4f4;
-            --text-color: #000000;
+            --button-text-color: #f4f4f4;
+            --button-background-color: #3e6ae1;
         }
 
         .sfrplay { background-image: url("images/light/sfrplay.svg"); }
@@ -85,8 +77,8 @@
         @media (prefers-color-scheme: dark) {
             :root {
                 --background-color: #212121;
-                --navbar-color: #212121;
-                --text-color: #ffffff;
+                --button-text-color: #f4f4f4;
+                --button-background-color: #3e6ae1;
             }
 
             .sfrplay { background-image: url("images/dark/sfrplay.svg"); }
@@ -103,23 +95,18 @@
 </head>
 
 <body>
-    <div class="topnav">
-        <div class="menu-container">
-            <a href="https://www.youtube.com/redirect?q=http://teslatheater.github.io/" class="btn">
-                <span class="material-symbols-outlined">fullscreen</span>
-            </a>
-        </div>
-    </div>
 
     <div class="container">
-        <a href="https://www.youtube.com/redirect?q=https://tv.sfr.fr/" class="btn"><div class="sfrplay"></div></a>
-        <a href="https://www.youtube.com/redirect?q=https://chaines-tv.orange.fr/" class="btn"><div class="orangetv"></div></a>
-        <a href="https://www.youtube.com/redirect?q=https://france.tv/" class="btn"><div class="francetv"></div></a>
-        <a href="https://www.youtube.com/redirect?q=https://www.arte.tv/" class="btn"><div class="artetv"></div></a>
-        <a href="https://www.youtube.com/redirect?q=https://netflix.com/" class="btn"><div class="netflix"></div></a>
-        <a href="https://www.youtube.com/redirect?q=https://disneyplus.com/" class="btn"><div class="disneyplus"></div></a>
-        <a href="https://www.youtube.com/redirect?q=https://primevideo.com/" class="btn"><div class="primevideo"></div></a>
-        <a href="https://www.youtube.com/redirect?q=https://tv.apple.com/" class="btn"><div class="appletvplus"></div></a>
+        <a href="https://tv.sfr.fr/" class="btn"><div class="sfrplay"></div></a>
+        <a href="https://chaines-tv.orange.fr/" class="btn"><div class="orangetv"></div></a>
+        <a href="https://france.tv/" class="btn"><div class="francetv"></div></a>
+        <a href="https://www.arte.tv/" class="btn"><div class="artetv"></div></a>
+        <a href="https://netflix.com/" class="btn"><div class="netflix"></div></a>
+        <a href="https://disneyplus.com/" class="btn"><div class="disneyplus"></div></a>
+        <a href="https://primevideo.com/" class="btn"><div class="primevideo"></div></a>
+        <a href="https://tv.apple.com/" class="btn"><div class="appletvplus"></div></a>
         <a href="https://www.youtube.com/" class="btn"><div class="youtube"></div></a>
     </div>
+
+    <a class="btn action" href="https://www.youtube.com/redirect?q=https://teslatheater.github.io/">Fullscreen</a>
 </body>
