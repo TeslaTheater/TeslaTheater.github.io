@@ -1,7 +1,7 @@
 body {
     background-color: var(--background-color);
     margin: 0;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     font-family: var(--tds-font-family--combined);
     -webkit-font-smoothing: antialiased;
@@ -10,10 +10,22 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 100px;
-    margin: 50px auto;
-    max-width: 80%;
+    grid-template-columns: repeat(4, 150px);
+    padding: 50px;
+    justify-content: center;
+    grid-gap: 50px 100px;
+    margin: auto;
+
+}
+
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    border-radius:10px;
+    text-align:center;
 }
 
 .container a {
@@ -27,7 +39,7 @@ body {
 }
 
 .btn {
-    width: 200px;
+    width: 150px;
     height: auto;
     aspect-ratio: 1;
     display: inline;
@@ -39,17 +51,39 @@ body {
     cursor: pointer;
 }
 
+span.material-symbols-outlined {
+    margin-right: 8px;
+    font-size: 32px;
+}
+span.label {
+    line-height: 32px
+}
 
 .action {
     color: var(--button-text-color);
     background-color: var(--button-background-color);
-    width: auto;
-    padding: 8px 64px;
-    height: 48px;
-    margin: 50px auto;
+    width: fit-content;
+    padding: 16px 32px;
+    height: fit-content;
+    margin: 0 auto;
     text-decoration: none;
     display: flex;
 }
+
+/* Ripple effect */
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+}
+.ripple:hover {
+    background: #3457b1 radial-gradient(circle, transparent 1%, #3457b1 1%) center/15000%;
+}
+.ripple:active {
+    background-color: #3457b1;
+    background-size: 100%;
+    transition: background 0s;
+}
+
 
 :root {
     --background-color: #f4f4f4;
@@ -64,7 +98,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #171a20;
+        --background-color: #35383A;
         --button-text-color: #f4f4f4;
         --button-background-color: #3e6ae1;
         --text-color: #f4f4f4;
