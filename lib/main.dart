@@ -64,9 +64,10 @@ class _TeslaTheaterState extends State<TeslaTheater> {
       AppButtonData(id: 6, icon: Assets.icons.max.svg(), backgroundColor: const Color(0xFF002BE7), url: 'https://www.max.com/'),
       AppButtonData(id: 7, icon: Assets.icons.paramoutplus.svg(), backgroundColor: const Color(0xFF0164FF), url: 'https://www.paramountplus.com/'),
       AppButtonData(id: 8, icon: Assets.icons.artetv.svg(), backgroundColor: Colors.white, url: 'https://www.arte.tv/'),
-      AppButtonData(id: 9, icon: Assets.icons.francetv.svg(), backgroundColor: const Color(0XFF172128), url: 'https://www.france.tv/'),
+      AppButtonData(id: 9, icon: Assets.icons.francetv.svg(), backgroundColor: const Color(0xFF172128), url: 'https://www.france.tv/'),
       AppButtonData(id: 10, icon: Assets.icons.sfrplay.svg(), backgroundColor: Colors.white, url: 'https://tv.sfr.fr/'),
-      AppButtonData(id: 11, icon: Assets.icons.orangetv.svg(), backgroundColor: const Color(0XFFFF6600), url: 'https://chaines-tv.orange.fr/'),
+      AppButtonData(id: 11, icon: Assets.icons.orangetv.svg(), backgroundColor: const Color(0xFFFF6600), url: 'https://chaines-tv.orange.fr/'),
+      AppButtonData(id: 12, icon: Assets.icons.oqee.svg(), backgroundColor: const Color(0xFF161616), url: 'https://oqee.tv/'),
     ];
 
     if (storedOrder != null) {

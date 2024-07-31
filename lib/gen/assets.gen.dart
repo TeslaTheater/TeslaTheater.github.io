@@ -41,6 +41,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/netflix.svg
   SvgGenImage get netflix => const SvgGenImage('assets/icons/netflix.svg');
 
+  /// File path: assets/icons/oqee.svg
+  SvgGenImage get oqee => const SvgGenImage('assets/icons/oqee.svg');
+
   /// File path: assets/icons/orangetv.svg
   SvgGenImage get orangetv => const SvgGenImage('assets/icons/orangetv.svg');
 
@@ -71,6 +74,7 @@ class $AssetsIconsGen {
         max,
         mycanal,
         netflix,
+        oqee,
         orangetv,
         paramoutplus,
         primevideo,
