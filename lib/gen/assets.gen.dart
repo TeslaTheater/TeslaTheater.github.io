@@ -44,6 +44,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/orangetv.svg
   SvgGenImage get orangetv => const SvgGenImage('assets/icons/orangetv.svg');
 
+  /// File path: assets/icons/paramoutplus.svg
+  SvgGenImage get paramoutplus =>
+      const SvgGenImage('assets/icons/paramoutplus.svg');
+
   /// File path: assets/icons/primevideo.svg
   SvgGenImage get primevideo =>
       const SvgGenImage('assets/icons/primevideo.svg');
@@ -68,6 +72,7 @@ class $AssetsIconsGen {
         mycanal,
         netflix,
         orangetv,
+        paramoutplus,
         primevideo,
         sfrplay,
         tesla,
