@@ -4,26 +4,39 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  id-token: write
+
 jobs:
   flutter-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: Set up git
+        run: |
+          git config --global user.email "teslatheater@github.io"
+          git config --global user.name "github-actions[bot]"
+          git add .
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
 
       - name: Install Dependencies
+        working-directory: ./
         run: flutter pub get
 
-      - name: Run build_runner for Design System
+      - name: Generate build files
+        working-directory: ./
         run: dart run build_runner build --delete-conflicting-outputs
 
-      - name: Build TeslaTheater web
+      - name: Generate web files
+        working-directory: ./
         run: flutter build web
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
