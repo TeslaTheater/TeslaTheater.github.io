@@ -59,6 +59,8 @@ class TeslaTheater extends StatelessWidget {
       AppButtonData(icon: Assets.icons.primevideo.svg(), backgroundColor: const Color(0xFF1A98FF), url: 'https://www.primevideo.com/'),
       AppButtonData(icon: Assets.icons.sfrplay.svg(), backgroundColor: Colors.white, url: 'https://tv.sfr.fr/'),
       AppButtonData(icon: Assets.icons.youtube.svg(), backgroundColor: Colors.white, url: 'https://www.youtube.com/'),
+      AppButtonData(icon: Assets.icons.hbo.svg(), backgroundColor: Colors.white, url: 'https://www.hbo.com/'),
+      AppButtonData(icon: Assets.icons.max.svg(), backgroundColor: Colors.black, url: 'https://www.max.com/'),
     ];
 
     return Scaffold(

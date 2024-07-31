@@ -29,6 +29,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/francetv.svg
   SvgGenImage get francetv => const SvgGenImage('assets/icons/francetv.svg');
 
+  /// File path: assets/icons/hbo.svg
+  SvgGenImage get hbo => const SvgGenImage('assets/icons/hbo.svg');
+
+  /// File path: assets/icons/max.svg
+  SvgGenImage get max => const SvgGenImage('assets/icons/max.svg');
+
   /// File path: assets/icons/mycanal.svg
   SvgGenImage get mycanal => const SvgGenImage('assets/icons/mycanal.svg');
 
@@ -57,6 +63,8 @@ class $AssetsIconsGen {
         artetv,
         disneyplus,
         francetv,
+        hbo,
+        max,
         mycanal,
         netflix,
         orangetv,
