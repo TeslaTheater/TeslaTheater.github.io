@@ -43,7 +43,7 @@ class TeslaTheater extends StatefulWidget {
 }
 
 class _TeslaTheaterState extends State<TeslaTheater> {
-  List<AppButtonData> serviceButtons = [];
+  List<AppButtonData> appButtons = [];
 
   @override
   void initState() {
@@ -53,8 +53,8 @@ class _TeslaTheaterState extends State<TeslaTheater> {
 
   void _loadButtons() async {
     final prefs = await SharedPreferences.getInstance();
-    List<String>? storedOrder = prefs.getStringList('serviceOrder');
-    List<AppButtonData> defaultServicesButtons = [
+    List<String>? storedOrder = prefs.getStringList('appOrder');
+    List<AppButtonData> defaultAppButtons = [
       AppButtonData(id: 0, icon: Assets.icons.netflix.svg(), backgroundColor: Colors.white, url: 'https://www.netflix.com'),
       AppButtonData(id: 1, icon: Assets.icons.disneyplus.svg(), backgroundColor: const Color(0xFF101C50), url: 'https://www.disneyplus.com/'),
       AppButtonData(id: 2, icon: Assets.icons.primevideo.svg(), backgroundColor: const Color(0xFF1A98FF), url: 'https://www.primevideo.com/'),
@@ -71,9 +71,19 @@ class _TeslaTheaterState extends State<TeslaTheater> {
     ];
 
     if (storedOrder != null) {
-      serviceButtons = storedOrder.map((id) => defaultServicesButtons.firstWhere((button) => button.id == int.parse(id))).toList();
+      List<AppButtonData> orderedButtons = storedOrder
+          .map((id) => defaultAppButtons.firstWhere((button) => button.id == int.parse(id)))
+          .toList();
+
+      for (var button in defaultAppButtons) {
+        if (!orderedButtons.any((b) => b.id == button.id)) {
+          orderedButtons.add(button);
+        }
+      }
+
+      appButtons = orderedButtons;
     } else {
-      serviceButtons = defaultServicesButtons;
+      appButtons = defaultAppButtons;
     }
 
     setState(() {});
@@ -81,8 +91,8 @@ class _TeslaTheaterState extends State<TeslaTheater> {
 
   Future<void> _saveButtonsOrder() async {
     final prefs = await SharedPreferences.getInstance();
-    List<String> serviceOrder = serviceButtons.map((button) => button.id.toString()).toList();
-    await prefs.setStringList('serviceOrder', serviceOrder);
+    List<String> appOrder = appButtons.map((button) => button.id.toString()).toList();
+    await prefs.setStringList('appOrder', appOrder);
   }
 
   void _onReorder(int oldIndex, int newIndex) {
@@ -90,8 +100,8 @@ class _TeslaTheaterState extends State<TeslaTheater> {
       if (newIndex > oldIndex) {
         newIndex -= 1;
       }
-      final AppButtonData item = serviceButtons.removeAt(oldIndex);
-      serviceButtons.insert(newIndex, item);
+      final AppButtonData item = appButtons.removeAt(oldIndex);
+      appButtons.insert(newIndex, item);
     });
     _saveButtonsOrder();
   }
@@ -127,7 +137,7 @@ class _TeslaTheaterState extends State<TeslaTheater> {
                 onReorder: _onReorder,
                 spacing: 24.0,
                 runSpacing: 24.0,
-                children: serviceButtons
+                children: appButtons
                     .asMap()
                     .map((index, buttonData) => MapEntry(index, _buildAppButton(buttonData, index)))
                     .values
