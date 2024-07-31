@@ -1,4 +1,4 @@
-name: Generate Widgetbook
+name: Generate Github Pages
 on:
   push:
     branches:
@@ -19,7 +19,7 @@ jobs:
       - name: Run build_runner for Design System
         run: dart run build_runner build --delete-conflicting-outputs
 
-      - name: Build Widgetbook
+      - name: Build TeslaTheater web
         run: flutter build web
 
       - name: Deploy to GitHub Pages
